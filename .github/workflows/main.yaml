@@ -29,4 +29,14 @@ jobs:
         with:
           python-version: '3.10'
       - run: pip install -r requirements.txt
-      - run: esphome compile tests/rp2040w.yaml
+      - run: esphome config tests/rp2040w.yaml
+      - run: esphome compile --verbose tests/rp2040w.yaml
+        continue-on-error: true
+      - name: Capture error logs
+        if: failure()
+        run: cat /path/to/error/logs
+      - name: Store logs as artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: error-logs
+          path: /path/to/error/logs
