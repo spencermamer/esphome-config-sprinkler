@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2023 Ilia Sotnikov
+---
+binary_sensor:
+  - platform: gpio
+    pin: GPIO0
+    id: ${rain_sensor_id}
+    name: "Rain sensor"
+    device_class: moisture
+    internal: true
+    filters:
+      - invert: ${rain_sensor_inverted}
+    on_state:
+      - lambda: !include
+          file: script_rain_water_tank_sensors_action.yaml
+          vars:
+            triggered_by: ${rain_sensor_id}

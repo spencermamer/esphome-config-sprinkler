@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2023 Ilia Sotnikov
+---
+switch:
+  - platform: gpio
+    pin: GPIO6
+    id: buzzer

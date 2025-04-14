@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2023 Ilia Sotnikov
+---
+binary_sensor:
+  - platform: gpio
+    pin: GPIO1
+    id: ${water_tank_empty_id}
+    name: "Water tank empty"
+    device_class: moisture
+    internal: true
+    filters:
+      - invert: ${water_tank_empty_inverted}
+    on_state:
+      - lambda: !include
+          file: script_rain_water_tank_sensors_action.yaml
+          vars:
+            triggered_by: ${water_tank_empty_id}

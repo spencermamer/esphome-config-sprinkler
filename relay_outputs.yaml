@@ -1,0 +1,29 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2023 Ilia Sotnikov
+---
+# https://www.waveshare.com/wiki/Pico-Relay-B
+switch:
+  - platform: gpio
+    pin: GPIO21
+    id: relay_1
+  - platform: gpio
+    pin: GPIO20
+    id: relay_2
+  - platform: gpio
+    pin: GPIO19
+    id: relay_3
+  - platform: gpio
+    pin: GPIO18
+    id: relay_4
+  - platform: gpio
+    pin: GPIO17
+    id: relay_5
+  - platform: gpio
+    pin: GPIO16
+    id: relay_6
+  - platform: gpio
+    pin: GPIO15
+    id: ${peripherals_power_off_relay_id}
+  - platform: gpio
+    pin: GPIO14
+    id: ${pump_relay_id}
