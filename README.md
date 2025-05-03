@@ -63,8 +63,8 @@ used to build the controller.
 ESP8266/ESP32 would also work given it has sufficient GPIOs via an extender and
 configuration modifications to change GPIO pins.
 
-* [Raspberry Pi Pico W](https://www.raspberrypi.com/products/raspberry-pi-pico/)
-* [Industrial 8-Channel Relay Module for Raspberry Pi Pico (Pico-Relay-B)](https://www.waveshare.com/pico-relay-b.htm)
+* [WAVESHARE ESP32-Wroom-S3](https://www.waveshare.com/wiki/ESP32-Wroom-S3)
+* [Industrial 8-Channel Relay Module for WAVESHARE ESP32-Wroom-S3](https://www.waveshare.com/wiki/ESP32-Wroom-S3)
 * A 5V power supply, Meanwell HDR-15-5 (5V, 2.4A, DIN rail mounted) has been
   used 
 * Irrigation (valves, pipe, pump, water tank) - likely very specific to this
@@ -72,12 +72,12 @@ configuration modifications to change GPIO pins.
 
 Optionally:
 * A DS3231 RTC. DS1307 would also work but has lower accuracy and is a 5V unit
-  (most of Raspberry Pi Pico pins are 3.3V)
+  (most of WAVESHARE ESP32-Wroom-S3 pins are 3.3V)
 * A PCD8544 display
 
 ### GPIO layout
 
-|GPIO  | Purpose                           |[In stock Pico-Relay-B](https://www.waveshare.com/wiki/Pico-Relay-B)|
+|GPIO  | Purpose                           |[In stock WAVESHARE ESP32-Wroom-S3](https://www.waveshare.com/wiki/ESP32-Wroom-S3)|
 |------|-----------------------------------|:-:|
 |GPIO21| Relay 1 (lawn, south zone)        | Y |
 |GPIO20| Relay 2 (lawn, north zone)        | Y |
@@ -102,9 +102,9 @@ Optionally:
 |GPIO8 | RTC SDA                           | N |
 |GPIO9 | RTC SCL                           | N |
 
-### Pico-Relay-B hardware modifications
+### WAVESHARE ESP32-Wroom-S3 hardware modifications
 
-The stock Pico-Relay-B lacks GPIO exposed via a terminal - those are needed to
+The stock WAVESHARE ESP32-Wroom-S3 lacks GPIO exposed via a terminal - those are needed to
 connect rain sensor and water tank empty one, the screw terminal (4 pins) has
 been added (lower left corner).
 
@@ -114,7 +114,7 @@ corner).
 Finally, PCD8544 display has been added to show controller state (not shown on
 the image below).
 
-![Waveshare Pico-Relay-B modifications](/docs/assets/waveshare-hw.jpg)
+![Waveshare ESP32-Wroom-S3 modifications](/docs/assets/waveshare-hw.jpg)
 
 ## How to use
 
